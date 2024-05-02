@@ -1,3 +1,6 @@
+/* 전체 CSS 코드 */
+
+/* Navbar 스타일 */
 .navbar {
   position: fixed;
   top: 0;
@@ -6,16 +9,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  Background-color:#609798;
+  background-color: #609798;
   padding: 8px 20%;
   height: 50px;
-  
+  border-bottom: #171717;
 }
 
 body {
   margin: 0;
   font-family: "Helvetica";
-
 }
 
 .navbar__logo {
@@ -28,7 +30,6 @@ a {
   text-decoration: none;
   color: white;
 }
-
 
 .navbar__menu {
   list-style: none;
@@ -64,7 +65,7 @@ a {
   color : rgb(37, 37, 37);
   padding : 12px;
   width :200px;
-  text-align: center;
+  text-align: left;
   cursor : pointer;
   font-size : 12px;
 }
@@ -93,7 +94,7 @@ a {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-s
+
 .navbar__menu li {
   padding: 8px 30px;
   font-size: 20px;
@@ -105,18 +106,15 @@ s
   object-fit: cover;
 }
 
-  
 .wr {
   margin: auto;
   background-color: white;
   border: 2px solid darkblue;
   border-radius: 20px;
   width: 30%;
-
-  
 }
 
-body h1{
+body h1 {
   text-align: center;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -124,9 +122,7 @@ body h1{
   font-style: bold;
   color: #545454;
   padding: 5% 0px;
-
 }
-
 
 .select {
   height: 30px;
@@ -169,13 +165,13 @@ body h1{
   font-size: 16px;
 }
 
-.price{
+.price {
   margin-top: 4px;
   margin-bottom: 80px;
 }
 
 footer {
-  Background-color:#4d9999;
+  background-color: #4d9999;
   color: #fff;
   padding: 20px 0;
   bottom: 0;
@@ -191,4 +187,270 @@ footer p {
   background-color: #b3d6d6;
   padding-top: 20px;
 }
+.test{
+  width: 100%;
+  height: 100%;
+  transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0); 
+  -o-transform: scale(1.0);
+  filter: brightness(1);
+  transition: transform 0.3s;
+}
 
+.products1:hover .test {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2); /* IE 9 */
+  -o-transform: scale(1.2);
+  filter: brightness(0.5);
+  transition: transform 0.3s;
+}
+
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  border: 1px solid rgb(37, 37, 37);
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  font-weight: 400;
+  color: rgb(37, 37, 37);
+  padding: 12px;
+  width: 200px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  font-weight: 400;
+  background-color: #f9f9f9;
+  min-width: 200px;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 12px;
+  padding: 12px 20px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ececec;
+}
+
+.dropdown.clicked .dropdown-content {
+  display: block;
+}
+
+.dropdown.clicked .dropbtn {
+  background-color: #ececec;
+}
+
+.dropdown.clicked .dropbtn {
+  cursor: pointer;
+}
+
+/* 반응형 수정 부분 */
+@media screen and (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    padding: 8px 5%;
+  }
+
+  .navbar__logo {
+    left: auto;
+    right: auto;
+    position: relative;
+    margin-right: auto;
+    font-size: 26px;
+  }
+
+  .navbar__icons i {
+    font-size: 18px;
+  }
+
+  .navbar__menu,
+  .navbar__icons {
+    display: none;
+  }
+
+  .img_광고1 {
+    padding-left: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .products {
+    grid-template-columns: repeat(1, minmax(0px, 1fr));
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .products1 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+
+  .products img {
+    width: 100%;
+    height: auto;
+  }
+
+  .products a {
+    font-size: 14px;
+  }
+
+  body h1 {
+    font-size: 24px;
+  }
+}
+
+/* 검색창 구현 */
+
+
+.search-bar input,
+.search-btn, 
+.search-btn:before, 
+.search-btn:after {
+	transition: all 0.25s ease-out;
+}
+.search-bar input,
+.search-btn {
+	width: 3em;
+	height: 3em;
+}
+.search-bar input:invalid:not(:focus),
+.search-btn {
+	cursor: pointer;
+}
+.search-bar,
+.search-bar input:focus,
+.search-bar input:valid  {
+	width: 100%;
+}
+.search-bar input:focus,
+.search-bar input:not(:focus) + .search-btn:focus {
+	outline: transparent;
+}
+.search-bar {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: center;
+	max-width: 30em;
+}
+.search-bar input {
+	background: transparent;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.4em #171717 inset;
+	padding: 0.75em;
+	transform: translate(0.5em,0.5em) scale(0.5);
+	transform-origin: 100% 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.search-bar input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.search-bar input:focus,
+.search-bar input:valid {
+	background: #fff;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+.search-btn {
+	background: #171717;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+	transform-origin: 0 50%;
+}
+.search-btn:before, 
+.search-btn:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+.search-btn:before {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	top: 0.75em;
+	left: 0.75em;
+	width: 1.2em;
+	height: 1.2em;
+}
+.search-btn:after {
+	background: #f1f1f1;
+	border-radius: 0 0.25em 0.25em 0;
+	top: 51%;
+	left: 51%;
+	width: 0.75em;
+	height: 0.25em;
+	transform: translate(0.2em,0) rotate(45deg);
+	transform-origin: 0 50%;
+}
+.search-btn span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+/* Active state */
+.search-bar input:focus + .search-btn,
+.search-bar input:valid + .search-btn {
+	background: #2762f3;
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+.search-bar input:focus + .search-btn:before, 
+.search-bar input:focus + .search-btn:after,
+.search-bar input:valid + .search-btn:before, 
+.search-bar input:valid + .search-btn:after {
+	opacity: 1;
+}
+.search-bar input:focus + .search-btn:hover,
+.search-bar input:valid + .search-btn:hover,
+.search-bar input:valid:not(:focus) + .search-btn:focus {
+	background: #0c48db;
+}
+.search-bar input:focus + .search-btn:active,
+.search-bar input:valid + .search-btn:active {
+	transform: translateY(1px);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	body, input {
+		color: #f1f1f1;
+	}
+	body {
+		background: #171717;
+	}
+	.search-bar input {
+		box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+	}
+	.search-bar input:focus,
+	.search-bar input:valid {
+		background: #3d3d3d;
+		box-shadow: 0 0 0 0.1em #3d3d3d inset;
+	}
+	.search-btn {
+		background: #f1f1f1;
+	}
+}
